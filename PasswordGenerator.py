@@ -8,6 +8,9 @@ from itertools import count
 import random
 from string import *
 import tkinter as tk
+import clipboard as pc
+
+
 
 ValMin = int 
 ValMax = int
@@ -63,16 +66,19 @@ def closeWindow():
 
 
     PassSize = ("Votre mot de passe de %s" %PassLength)
-    PassInfo = (" caractères est :\n{}".format(Password))
+    PassInfo = (" caractères est :\n{}\nIl a été copié dans votre presse papier".format(Password))
     VarPass = (PassSize,PassInfo)
     PasswordFinal ="".join(VarPass)
     PrintingPassword = tk.Label(PasswordWindow, text=PasswordFinal)
+    CopiedPassword = pc.copy(Password)
+
+
     PrintingPassword.pack()
     PasswordWindow.deiconify()
 
     PasswordWindow.mainloop()
 
-btn3= tk.Button(PasswordSizeWindow,text= 'Créer le mot de passe', command = closeWindow)
+btn3= tk.Button(PasswordSizeWindow,text= 'Créer et copier le mot de passe dans le presse papier', command = closeWindow)
 btn3.pack()
 
 PasswordSizeWindow.mainloop()
