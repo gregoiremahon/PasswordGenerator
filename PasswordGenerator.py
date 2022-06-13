@@ -69,6 +69,8 @@ def closeWindow():
     PassInfo = (" caractères est :\n{}\nIl a été copié dans votre presse papier".format(Password))
     VarPass = (PassSize,PassInfo)
     PasswordFinal ="".join(VarPass)
+    #asswordFinal = PasswordFinal.encode('UTF-8')
+    #PasswordFinal.update()
     PrintingPassword = tk.Label(PasswordWindow, text=PasswordFinal)
     CopiedPassword = pc.copy(Password)
 
